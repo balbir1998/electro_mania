@@ -10,6 +10,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <script src="script.js" type="module"></script>
 </head>
@@ -19,6 +22,7 @@
         <div class="top-header">
             <p>Get 20% discount on your first purchase</p>
         </div>
+
         <div class="main-header">
             <div class="container">
                 <div class="desktop-main-header">
@@ -38,14 +42,50 @@
                         </div>
 
                         <div class="icons-container">
-                            <button class="wishlist"><img src="./assets/wishlist-icon.png" alt="wishlist"></button>
-                            <button><img src="./assets/user-icon.png" alt="user"></button>
-                            <button><img src="./assets/cart.png" alt="cart"></button>
+                            <button class="wishlist"><i class="fa-regular fa-heart"></i></button>
+                            <button><i class="fa-regular fa-user"></i></button>
+                            <button><i class="fa-solid fa-cart-shopping"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <section class="navbar">
+            <div class="container">
+                <nav>
+                    <div class="category-section">
+                        <div class="category-menu">
+                            <span class="category-hamburger-menu">
+                                <span class="top"></span>
+                                <span class="mid"></span>
+                                <span class="bot"></span>
+                            </span>
+                            <span class="cat-text">All Categories</span>
+                        </div>
+                        <ul class="category-list">
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">Audio</a></li>
+                            <li><a href="#">Camera</a></li>
+                            <li><a href="#">Computer & Laptop</a></li>
+                            <li><a href="#">Home Appliances</a></li>
+                            <li><a href="#">Watches</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-menus-section">
+                        <ul class="menus-container">
+                            <li><a href="#" class="active">Home</a></li>
+                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">Most Popular</a></li>
+                            <li><a href="#">On Sale</a></li>
+                            <li><a href="#">Computer & Laptop</a></li>
+                            <li><a href="#">Home Appliances</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </section>
     </header>
 </body>
 
