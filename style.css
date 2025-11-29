@@ -22,6 +22,18 @@ body {
     letter-spacing: 0.5px;
 }
 
+.overlay {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.overlay.active {
+    display: unset;
+}
+
 .top-header {
     text-align: center;
     padding: 0 10px;
@@ -59,6 +71,11 @@ body {
     flex-grow: 2;
     display: flex;
     justify-content: center;
+}
+
+.search-container.responsive-search {
+    margin: 0.5rem 0.5rem 0;
+    display: none;
 }
 
 .search-container form {
@@ -112,18 +129,22 @@ form .input-container {
     transition: var(--color-transtion);
 }
 
-.icons-container button img {
-    width: 100%;
-}
-
 .icons-container button:hover {
     color: var(--brand-color);
+}
+
+.icons-container .hamburgur-menu {
+    display: none;
 }
 
 .navbar {
     border-top: 1px solid;
     border-bottom: 1px solid;
     border-color: #EBEBEB;
+}
+
+.close-menus {
+    display: none;
 }
 
 .navbar nav {
@@ -170,8 +191,11 @@ form .input-container {
     font-weight: 500;
 }
 
+.responsive-menus {
+    display: none;
+}
+
 .category-section {
-    /* border: 1px solid green; */
     position: relative;
 }
 
@@ -221,6 +245,7 @@ form .input-container {
 .nav-menus-section {
     display: flex;
     align-items: center;
+    flex-grow: 1;
 }
 
 .menus-container {
