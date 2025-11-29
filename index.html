@@ -14,10 +14,12 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsiveStyle.css">
     <script src="script.js" type="module"></script>
 </head>
 
 <body>
+    <div class="overlay"></div>
     <header>
         <div class="top-header">
             <p>Get 20% discount on your first purchase</p>
@@ -25,12 +27,12 @@
 
         <div class="main-header">
             <div class="container">
-                <div class="desktop-main-header">
+                <div class="desktop-main-header active">
                     <div class="main-header-bar">
                         <div class="logo-container">
                             <a href="/"><img src="./assets/logo.png" alt="logo" /></a>
                         </div>
-                        <div class="search-container">
+                        <div class="search-container desktop-search">
                             <form>
                                 <div class="input-container">
                                     <input type="text" placeholder="Search..." />
@@ -42,18 +44,38 @@
                         </div>
 
                         <div class="icons-container">
+                            <button class="hamburgur-menu"><i class="fa-solid fa-bars"></i></button>
                             <button class="wishlist"><i class="fa-regular fa-heart"></i></button>
                             <button><i class="fa-regular fa-user"></i></button>
                             <button><i class="fa-solid fa-cart-shopping"></i></button>
                         </div>
+                    </div>
+                    <div class="search-container responsive-search">
+                        <form>
+                            <div class="input-container">
+                                <input type="text" placeholder="Search..." />
+                                <button type="submit">
+                                    <img src="./assets/search-icon.png" alt="search-icon">
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
 
         <section class="navbar">
+            <p class="close-menus">Close <i class="fa-solid fa-xmark"></i></p>
             <div class="container">
                 <nav>
+                    <div class="responsive-menus">
+                        <div class="responsive-cat-btn">
+                            <span>Categories</span>
+                        </div>
+                        <div class="responsive-menu-btn active">
+                            <span>Menu</span>
+                        </div>
+                    </div>
                     <div class="category-section">
                         <div class="category-menu">
                             <span class="category-hamburger-menu">
@@ -63,7 +85,7 @@
                             </span>
                             <span class="cat-text">All Categories</span>
                         </div>
-                        <ul class="category-list">
+                        <ul class="category-list responsive-cat-list">
                             <li><a href="#">Accessories</a></li>
                             <li><a href="#">Audio</a></li>
                             <li><a href="#">Camera</a></li>
@@ -73,7 +95,7 @@
                         </ul>
                     </div>
                     <div class="nav-menus-section">
-                        <ul class="menus-container">
+                        <ul class="menus-container responsive-menus-list active">
                             <li><a href="#" class="active">Home</a></li>
                             <li><a href="#">Shop</a></li>
                             <li><a href="#">Most Popular</a></li>
