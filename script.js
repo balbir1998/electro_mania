@@ -8,6 +8,16 @@ const responsiveCatList = document.querySelector(".responsive-cat-list");
 const responsiveMenusList = document.querySelector(".responsive-menus-list");
 const closeMenusBtn = document.querySelector(".close-menus");
 const overlay = document.querySelector(".overlay");
+const desktopSearchInp = document.querySelector(".desktop-search input");
+const responsiveSearchInp = document.querySelector(".responsive-search input");
+
+desktopSearchInp.addEventListener("input", function (e) {
+    responsiveSearchInp.value = e.target.value;
+});
+
+responsiveSearchInp.addEventListener("input", function (e) {
+    desktopSearchInp.value = e.target.value;
+});
 
 hamburgurMenu.addEventListener("click", function () {
     navbar.classList.toggle("active");
