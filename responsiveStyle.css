@@ -136,7 +136,19 @@
         display: flex;
     }
 
+    /* ------------ banner ----- */
+
     .banner-container {
         flex-direction: column;
+    }
+
+    /* ------------main banners section------------ */
+    .main-banners-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-banners-container .main-banner-img {
+        max-width: 428px;
     }
 }
