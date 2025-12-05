@@ -26,15 +26,33 @@
         <div class="top-header">
             <p>Get 20% discount on your first purchase</p>
         </div>
+        <section class="navbar-container">
+            <div class="main-header">
+                <div class="container">
+                    <div class="desktop-main-header active">
+                        <div class="main-header-bar">
+                            <div class="logo-container">
+                                <a href="/"><img src="./assets/logo.png" alt="logo" /></a>
+                            </div>
+                            <div class="search-container desktop-search">
+                                <form>
+                                    <div class="input-container">
+                                        <input type="text" placeholder="Search..." />
+                                        <button type="submit">
+                                            <img src="./assets/search-icon.png" alt="search-icon">
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
 
-        <div class="main-header">
-            <div class="container">
-                <div class="desktop-main-header active">
-                    <div class="main-header-bar">
-                        <div class="logo-container">
-                            <a href="/"><img src="./assets/logo.png" alt="logo" /></a>
+                            <div class="icons-container">
+                                <button class="hamburgur-menu"><i class="fa-solid fa-bars"></i></button>
+                                <button class="wishlist"><i class="fa-regular fa-heart"></i></button>
+                                <button><i class="fa-regular fa-user"></i></button>
+                                <button><i class="fa-solid fa-cart-shopping"></i></button>
+                            </div>
                         </div>
-                        <div class="search-container desktop-search">
+                        <div class="search-container responsive-search">
                             <form>
                                 <div class="input-container">
                                     <input type="text" placeholder="Search..." />
@@ -44,71 +62,54 @@
                                 </div>
                             </form>
                         </div>
-
-                        <div class="icons-container">
-                            <button class="hamburgur-menu"><i class="fa-solid fa-bars"></i></button>
-                            <button class="wishlist"><i class="fa-regular fa-heart"></i></button>
-                            <button><i class="fa-regular fa-user"></i></button>
-                            <button><i class="fa-solid fa-cart-shopping"></i></button>
-                        </div>
-                    </div>
-                    <div class="search-container responsive-search">
-                        <form>
-                            <div class="input-container">
-                                <input type="text" placeholder="Search..." />
-                                <button type="submit">
-                                    <img src="./assets/search-icon.png" alt="search-icon">
-                                </button>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <section class="navbar">
-            <p class="close-menus">Close <i class="fa-solid fa-xmark"></i></p>
-            <div class="container">
-                <nav>
-                    <div class="responsive-menus">
-                        <div class="responsive-cat-btn">
-                            <span>Categories</span>
+            <section class="navbar">
+                <p class="close-menus">Close <i class="fa-solid fa-xmark"></i></p>
+                <div class="container">
+                    <nav>
+                        <div class="responsive-menus">
+                            <div class="responsive-cat-btn">
+                                <span>Categories</span>
+                            </div>
+                            <div class="responsive-menu-btn active">
+                                <span>Menu</span>
+                            </div>
                         </div>
-                        <div class="responsive-menu-btn active">
-                            <span>Menu</span>
+                        <div class="category-section">
+                            <div class="category-menu">
+                                <span class="category-hamburger-menu">
+                                    <span class="top"></span>
+                                    <span class="mid"></span>
+                                    <span class="bot"></span>
+                                </span>
+                                <span class="cat-text">All Categories</span>
+                            </div>
+                            <ul class="category-list responsive-cat-list">
+                                <li><a href="#">Accessories</a></li>
+                                <li><a href="#">Audio</a></li>
+                                <li><a href="#">Camera</a></li>
+                                <li><a href="#">Computer & Laptop</a></li>
+                                <li><a href="#">Home Appliances</a></li>
+                                <li><a href="#">Watches</a></li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="category-section">
-                        <div class="category-menu">
-                            <span class="category-hamburger-menu">
-                                <span class="top"></span>
-                                <span class="mid"></span>
-                                <span class="bot"></span>
-                            </span>
-                            <span class="cat-text">All Categories</span>
+                        <div class="nav-menus-section">
+                            <ul class="menus-container responsive-menus-list active">
+                                <li><a href="#" class="active">Home</a></li>
+                                <li><a href="#">Shop</a></li>
+                                <li><a href="#">Most Popular</a></li>
+                                <li><a href="#">On Sale</a></li>
+                                <li><a href="#">Computer & Laptop</a></li>
+                                <li><a href="#">Home Appliances</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
                         </div>
-                        <ul class="category-list responsive-cat-list">
-                            <li><a href="#">Accessories</a></li>
-                            <li><a href="#">Audio</a></li>
-                            <li><a href="#">Camera</a></li>
-                            <li><a href="#">Computer & Laptop</a></li>
-                            <li><a href="#">Home Appliances</a></li>
-                            <li><a href="#">Watches</a></li>
-                        </ul>
-                    </div>
-                    <div class="nav-menus-section">
-                        <ul class="menus-container responsive-menus-list active">
-                            <li><a href="#" class="active">Home</a></li>
-                            <li><a href="#">Shop</a></li>
-                            <li><a href="#">Most Popular</a></li>
-                            <li><a href="#">On Sale</a></li>
-                            <li><a href="#">Computer & Laptop</a></li>
-                            <li><a href="#">Home Appliances</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+                    </nav>
+                </div>
+            </section>
         </section>
 
         <section class="banner-section">
@@ -130,7 +131,6 @@
     </header>
 
     <main>
-
         <!------------ brands section ------------>
         <section class="brands-section">
             <div class="container">
@@ -178,15 +178,6 @@
             <div class="container">
                 <h1>Explore Products</h1>
                 <div class="cards-container">
-                    <!-- <div class="card">
-                        <img src="./assets/products/watch.png" alt="card image">
-                        <p class="card-title">Smart Band</p>
-                        <span class="price">50:00</span>
-                        <div class="card-bottom">
-                            <button class="card-btn">Add To Cart</button>
-                            <button class="card-btn"><i class="fa-regular fa-heart"></i> Wishlist</button>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </section>
