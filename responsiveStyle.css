@@ -125,6 +125,10 @@
         cursor: pointer;
         margin-bottom: 1rem;
     }
+
+    .navbar-container.fixed {
+        padding-bottom: unset;
+    }
 }
 
 @media (max-width: 768px) {
@@ -134,6 +138,15 @@
 
     .search-container.responsive-search {
         display: flex;
+    }
+
+    .navbar-container.fixed .logo-container img {
+        max-width: 100px;
+    }
+
+
+    .navbar-container.fixed .main-header {
+        padding-block: 4px;
     }
 
     /* ------------ banner ----- */

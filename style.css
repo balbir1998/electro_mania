@@ -37,18 +37,22 @@ body {
 }
 
 .move-to-top {
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 2.7rem;
+    width: 2.7rem;
     background-color: var(--brand-color);
     color: #ffffff;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 100%;
     position: fixed;
     bottom: 100px;
     right: 30px;
+}
+
+.move-to-top.active {
+    display: flex;
 }
 
 .top-header {
@@ -290,6 +294,21 @@ form .input-container {
 .menus-container li>a.active,
 .menus-container li>a:hover {
     color: var(--brand-color);
+}
+
+.navbar-container.fixed {
+    padding-bottom: 0.8rem;
+    position: fixed;
+    width: 100%;
+    background-color: #ffffff;
+    transition: all 0.2s ease-in;
+    top: 0;
+    z-index: 999;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.navbar-container.fixed .main-header {
+    padding-block: 15px;
 }
 
 /* ----------------banner---------------- */
