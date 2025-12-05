@@ -1,4 +1,6 @@
 import { productsData } from "./data.js";
+const navbarContainer = document.querySelector(".navbar-container");
+const moveToTopBtn = document.querySelector(".move-to-top");
 const categoryMenu = document.querySelector(".category-menu");
 const categoryList = document.querySelector(".category-list");
 const hamburgurMenu = document.querySelector(".hamburgur-menu");
@@ -14,6 +16,16 @@ const responsiveSearchInp = document.querySelector(".responsive-search input");
 const cardsContainer = document.querySelector(".cards-container");
 
 renderProducts();
+
+window.addEventListener("scroll", function () {
+    if (document.documentElement.scrollTop >= 300) {
+        navbarContainer.classList.add("fixed");
+        moveToTopBtn.classList.add("active");
+    } else {
+        navbarContainer.classList.remove("fixed");
+        moveToTopBtn.classList.remove("active");
+    }
+})
 
 desktopSearchInp.addEventListener("input", function (e) {
     responsiveSearchInp.value = e.target.value;
@@ -64,6 +76,5 @@ function renderProducts() {
                     </div>
                  </div>`;
     });
-
     cardsContainer.innerHTML = cardHtml;
 }
