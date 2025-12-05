@@ -126,7 +126,7 @@
         margin-bottom: 1rem;
     }
 
-    .navbar-container.fixed {
+    .navbar-container {
         padding-bottom: unset;
     }
 }
@@ -149,6 +149,10 @@
         padding-block: 4px;
     }
 
+    .main-header {
+        padding-block: 4px;
+    }
+
     /* ------------ banner ----- */
 
     .banner-container {
@@ -161,7 +165,7 @@
         align-items: center;
     }
 
-    .main-banners-container .main-banner-img {
-        max-width: 428px;
-    }
+    /* .main-banners-container .main-banner-img {
+            max-width: 428px;
+        } */
 }

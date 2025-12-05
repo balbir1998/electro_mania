@@ -19,10 +19,8 @@ renderProducts();
 
 window.addEventListener("scroll", function () {
     if (document.documentElement.scrollTop >= 300) {
-        navbarContainer.classList.add("fixed");
         moveToTopBtn.classList.add("active");
     } else {
-        navbarContainer.classList.remove("fixed");
         moveToTopBtn.classList.remove("active");
     }
 })

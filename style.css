@@ -60,6 +60,7 @@ body {
     padding: 0 10px;
     background-color: var(--primary-color);
     color: #ffffff;
+    position: relative;
 }
 
 .top-header p {
@@ -67,8 +68,18 @@ body {
     line-height: 45px;
 }
 
+.navbar-container {
+    padding-bottom: 0.8rem;
+    position: sticky;
+    width: 100%;
+    background-color: #ffffff;
+    top: 0;
+    z-index: 999;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
 .main-header {
-    padding: 30px 0;
+    padding-block: 12px;
 }
 
 .container {
@@ -294,21 +305,6 @@ form .input-container {
 .menus-container li>a.active,
 .menus-container li>a:hover {
     color: var(--brand-color);
-}
-
-.navbar-container.fixed {
-    padding-bottom: 0.8rem;
-    position: fixed;
-    width: 100%;
-    background-color: #ffffff;
-    transition: all 0.2s ease-in;
-    top: 0;
-    z-index: 999;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.navbar-container.fixed .main-header {
-    padding-block: 15px;
 }
 
 /* ----------------banner---------------- */
