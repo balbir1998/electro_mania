@@ -1,3 +1,4 @@
+import { productsData } from "./data.js";
 const categoryMenu = document.querySelector(".category-menu");
 const categoryList = document.querySelector(".category-list");
 const hamburgurMenu = document.querySelector(".hamburgur-menu");
@@ -10,6 +11,9 @@ const closeMenusBtn = document.querySelector(".close-menus");
 const overlay = document.querySelector(".overlay");
 const desktopSearchInp = document.querySelector(".desktop-search input");
 const responsiveSearchInp = document.querySelector(".responsive-search input");
+const cardsContainer = document.querySelector(".cards-container");
+
+renderProducts();
 
 desktopSearchInp.addEventListener("input", function (e) {
     responsiveSearchInp.value = e.target.value;
@@ -46,3 +50,20 @@ overlay.addEventListener("click", function () {
     navbar.classList.remove("active");
     overlay.classList.remove("active");
 });
+
+function renderProducts() {
+    let cardHtml = "";
+    productsData.forEach(product => {
+        cardHtml += `<div class="card">
+                    <img src=${product.src} alt="card image">
+                    <p class="card-title">${product.title}</p>
+                    <span class="price">${product.price}</span>
+                    <div class="card-bottom">
+                        <button class="card-btn">Add To Cart</button>
+                        <button class="card-btn"><i class="fa-regular fa-heart"></i> Wishlist</button>
+                    </div>
+                 </div>`;
+    });
+
+    cardsContainer.innerHTML = cardHtml;
+}
