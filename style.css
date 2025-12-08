@@ -431,8 +431,9 @@ form .input-container {
 
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-    column-gap: 0.8rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 230px));
+    column-gap: 2.5rem;
+    justify-content: center;
     row-gap: 1.5rem;
 }
 
@@ -452,12 +453,23 @@ form .input-container {
     width: 100%;
 }
 
+.card-title {
+    margin-block: 0.5rem;
+}
+
 .card-bottom {
     padding: 0.5rem 0;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.card-bottom>* {
+    flex-shrink: 0;
 }
 
 .card-btn {
-    padding: 9px 20px;
+    padding: 9px 16px;
     background-color: unset;
     border-radius: 4px;
     border: 1px solid var(--brand-color);
@@ -469,4 +481,121 @@ form .input-container {
 
 .card-btn:hover {
     color: #20C9AE;
+}
+
+/* -------------accessories------------- */
+.accessories {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.discount-banner {
+    background-color: var(--brand-color);
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    margin-block: 10px;
+}
+
+.discount-banner>h2 {
+    margin-left: auto;
+    font-size: 1rem;
+    font-style: italic;
+    text-decoration: underline;
+    color: #0070DC;
+    text-transform: uppercase;
+}
+
+.discount-banner-text>* {
+    color: var(--secondary-color);
+}
+
+.discount-banner-text>p {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.discount-banner-text>span {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.discount-banner .banner-btn {
+    align-self: baseline;
+    margin-left: 2rem;
+}
+
+.accessories-container {
+    padding-block: 10px;
+    /* border: 1px solid; */
+    display: flex;
+}
+
+
+.left-side-banner {
+    padding: 30px;
+    background: url("./assets/accerssies-banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #bebbbb;
+}
+
+.left-side-banner .banner-text>h3 {
+    font-size: 13px;
+}
+
+.left-side-banner .banner-text>p {
+    font-size: 2rem;
+}
+
+.left-side-banner .banner-text>h2 {
+    font-size: 2.5rem;
+}
+
+.left-side-banner .banner-text>span {
+    font-size: 15px;
+}
+
+
+.accessories-cards-container.cards-container {
+    margin-inline: 2.5rem;
+    justify-content: space-between;
+    flex-grow: 1;
+    grid-template-columns: repeat(3, 230px);
+    column-gap: 0.5rem;
+}
+
+.facilities-section {
+    background-color: #041E42;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.facilities-section>* {
+    width: 100%;
+}
+
+.element-column {
+    padding-block: 3rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.element-icon {
+    color: var(--brand-color);
+}
+
+.element-icon i {
+    font-size: 2.875rem;
+}
+
+.element-column>div h3 {
+    margin: unset;
+    color: #ffffff;
+}
+
+.element-column>div p {
+    margin: unset;
+    color: #59A5C5;
 }
