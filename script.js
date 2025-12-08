@@ -1,5 +1,5 @@
 import { productsData } from "./data.js";
-const navbarContainer = document.querySelector(".navbar-container");
+import { accessoriesData } from "./accessories.js";
 const moveToTopBtn = document.querySelector(".move-to-top");
 const categoryMenu = document.querySelector(".category-menu");
 const categoryList = document.querySelector(".category-list");
@@ -14,8 +14,11 @@ const overlay = document.querySelector(".overlay");
 const desktopSearchInp = document.querySelector(".desktop-search input");
 const responsiveSearchInp = document.querySelector(".responsive-search input");
 const cardsContainer = document.querySelector(".cards-container");
+const accessoriesCardsContainer = document.querySelector(".accessories-cards-container");
 
-renderProducts();
+renderProducts(productsData, cardsContainer);
+renderProducts(accessoriesData, accessoriesCardsContainer)
+
 
 window.addEventListener("scroll", function () {
     if (document.documentElement.scrollTop >= 300) {
@@ -61,9 +64,9 @@ overlay.addEventListener("click", function () {
     overlay.classList.remove("active");
 });
 
-function renderProducts() {
+function renderProducts(data, container) {
     let cardHtml = "";
-    productsData.forEach(product => {
+    data.forEach(product => {
         cardHtml += `<div class="card">
                     <img src=${product.src} alt="card image">
                     <p class="card-title">${product.title}</p>
@@ -74,5 +77,5 @@ function renderProducts() {
                     </div>
                  </div>`;
     });
-    cardsContainer.innerHTML = cardHtml;
+    container.innerHTML = cardHtml;
 }
