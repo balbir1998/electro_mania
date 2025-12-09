@@ -209,4 +209,20 @@
         align-items: center;
         text-align: center;
     }
+
+    /*-------------- footer section --------------*/
+
+    .footer-items-container>* {
+        width: 50%;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer-items-container>* {
+        width: 100%;
+    }
+
+    .footer-child {
+        text-align: center;
+    }
 }

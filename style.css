@@ -75,7 +75,7 @@ body {
     background-color: #ffffff;
     top: 0;
     z-index: 999;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 6px;
 }
 
 .main-header {
@@ -486,7 +486,6 @@ form .input-container {
 /* -------------accessories------------- */
 .accessories {
     margin-top: 3rem;
-    margin-bottom: 5rem;
 }
 
 .discount-banner {
@@ -527,8 +526,8 @@ form .input-container {
 
 .accessories-container {
     padding-block: 10px;
-    /* border: 1px solid; */
     display: flex;
+    row-gap: 10px;
 }
 
 
@@ -558,14 +557,14 @@ form .input-container {
 
 
 .accessories-cards-container.cards-container {
-    margin-inline: 2.5rem;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-grow: 1;
     grid-template-columns: repeat(3, 230px);
     column-gap: 0.5rem;
 }
 
 .facilities-section {
+    margin-top: 10px;
     background-color: #041E42;
     display: flex;
     align-items: center;
@@ -598,4 +597,54 @@ form .input-container {
 .element-column>div p {
     margin: unset;
     color: #59A5C5;
+}
+
+/*------------------ footer section ------------------*/
+
+.footer-section {
+    margin-top: 2rem;
+    background-color: #F7F8F9;
+    border-top: 1px solid #EBEBEB;
+    color: #1C1D1E;
+}
+
+.footer-items-container {
+    display: flex;
+    padding-block: 5.625rem;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+}
+
+.footer-items-container>* {
+    width: 25%;
+    padding-inline: 1rem;
+}
+
+.footer-child>h4 {
+    margin: unset;
+    padding-bottom: 1rem;
+    font-size: 1.125rem;
+}
+
+.footer-child p {
+    margin: unset;
+}
+
+.footer-list li {
+    cursor: pointer;
+}
+
+.footer-child p+p,
+.footer-list li+li {
+    margin-top: 0.5rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid #EBEBEB;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: unset;
+    padding: 0.75rem;
 }
