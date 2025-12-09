@@ -70,7 +70,7 @@ function renderProducts(data, container) {
         cardHtml += `<div class="card">
                     <img src=${product.src} alt="card image">
                     <p class="card-title">${product.title}</p>
-                    <span class="price">${product.price}</span>
+                    <span class="price">&#8377;${product.price.toLocaleString({ "en": "IN" })}</span>
                     <div class="card-bottom">
                         <button class="card-btn">Add To Cart</button>
                         <button class="card-btn"><i class="fa-regular fa-heart"></i> Wishlist</button>
