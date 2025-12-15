@@ -1,5 +1,3 @@
-import { productsData } from "./data.js";
-import { accessoriesData } from "./accessories.js";
 const moveToTopBtn = document.querySelector(".move-to-top");
 const categoryMenu = document.querySelector(".category-menu");
 const categoryList = document.querySelector(".category-list");
@@ -13,12 +11,6 @@ const closeMenusBtn = document.querySelector(".close-menus");
 const overlay = document.querySelector(".overlay");
 const desktopSearchInp = document.querySelector(".desktop-search input");
 const responsiveSearchInp = document.querySelector(".responsive-search input");
-const cardsContainer = document.querySelector(".cards-container");
-const accessoriesCardsContainer = document.querySelector(".accessories-cards-container");
-
-renderProducts(productsData, cardsContainer);
-renderProducts(accessoriesData, accessoriesCardsContainer)
-
 
 window.addEventListener("scroll", function () {
     if (document.documentElement.scrollTop >= 300) {
@@ -26,7 +18,7 @@ window.addEventListener("scroll", function () {
     } else {
         moveToTopBtn.classList.remove("active");
     }
-})
+});
 
 desktopSearchInp.addEventListener("input", function (e) {
     responsiveSearchInp.value = e.target.value;
@@ -63,19 +55,3 @@ overlay.addEventListener("click", function () {
     navbar.classList.remove("active");
     overlay.classList.remove("active");
 });
-
-function renderProducts(data, container) {
-    let cardHtml = "";
-    data.forEach(product => {
-        cardHtml += `<div class="card">
-                    <img src=${product.src} alt="card image">
-                    <p class="card-title">${product.title}</p>
-                    <span class="price">&#8377;${product.price.toLocaleString({ "en": "IN" })}</span>
-                    <div class="card-bottom">
-                        <button class="card-btn">Add To Cart</button>
-                        <button class="card-btn"><i class="fa-regular fa-heart"></i> Wishlist</button>
-                    </div>
-                 </div>`;
-    });
-    container.innerHTML = cardHtml;
-}

@@ -1,4 +1,8 @@
+@import url("../base/common.css");
+
 @media (max-width: 1020px) {
+
+    /*----------- navbar -----------*/
     .icons-container .hamburgur-menu {
         display: unset;
     }
@@ -129,24 +133,11 @@
     .navbar-container {
         padding-bottom: unset;
     }
-
-    /* --------accessories section-------- */
-
-    .accessories-container {
-        flex-direction: column;
-    }
-
-    .left-side-banner {
-        background-position: center;
-    }
-
-    .accessories-cards-container.cards-container {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 230px));
-        justify-content: center;
-    }
 }
 
 @media (max-width: 768px) {
+
+    /*----------- navbar -----------*/
     .search-container.desktop-search {
         display: none;
     }
@@ -159,55 +150,12 @@
         max-width: 100px;
     }
 
-
     .navbar-container.fixed .main-header {
         padding-block: 4px;
     }
 
     .main-header {
         padding-block: 4px;
-    }
-
-    /* ------------ banner ----- */
-
-    .banner-container {
-        flex-direction: column;
-    }
-
-    /* ------------main banners section------------ */
-    .main-banners-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* ---------accessoriers--------- */
-
-    .discount-banner {
-        flex-direction: column;
-    }
-
-    .discount-banner-text {
-        text-align: center;
-    }
-
-    .discount-banner>h2 {
-        margin-left: unset;
-    }
-
-    .discount-banner .banner-btn {
-        align-self: unset;
-        margin-left: unset;
-    }
-
-    /* accessories section */
-    .facilities-section {
-        flex-direction: column;
-    }
-
-    .element-column {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
     }
 
     /*-------------- footer section --------------*/
@@ -218,6 +166,8 @@
 }
 
 @media (max-width: 500px) {
+
+    /*-------------- footer --------------*/
     .footer-items-container>* {
         width: 100%;
     }
