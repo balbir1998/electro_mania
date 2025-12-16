@@ -17,12 +17,16 @@ const responsiveSearchInp = document.querySelector(".responsive-search input");
 window.addEventListener("load", () => window.scrollTo(0, 0));
 
 window.addEventListener("scroll", function () {
-    if (document.documentElement.scrollTop >= 500) {
-        moveToTopBtn.classList.add("active");
+    if (document.documentElement.scrollTop >= 100) {
         document.body.classList.add("scroll-active");
     } else {
-        moveToTopBtn.classList.remove("active");
         document.body.classList.remove("scroll-active");
+    }
+
+    if (document.documentElement.scrollTop >= 500) {
+        moveToTopBtn.classList.add("active");
+    } else {
+        moveToTopBtn.classList.remove("active");
     }
 });
 

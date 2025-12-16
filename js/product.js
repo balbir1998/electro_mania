@@ -1,6 +1,5 @@
 import renderProducts from './utils/renderProducts.js';
 import { productsData } from './../data/products.js';
-const moveToTopBtn = document.querySelector(".move-to-top");
 const productImagesParent = document.querySelectorAll(".product-image-conatiner .product-img");
 const selectImages = document.querySelector(".images-list");
 const quantityContainer = document.querySelector(".quantity-section");
@@ -11,16 +10,6 @@ const ratings = document.querySelector(".ratings");
 const cardsContainer = document.querySelector(".cards-container");
 
 renderProducts(productsData.slice(0, 5), cardsContainer);
-
-window.addEventListener("scroll", function () {
-    if (document.documentElement.scrollTop >= 100) {
-        moveToTopBtn.classList.add("active");
-        document.body.classList.add("scroll-active");
-    } else {
-        moveToTopBtn.classList.remove("active");
-        document.body.classList.remove("scroll-active");
-    }
-});
 
 selectImages.addEventListener("click", (e) => {
     if (e.target === e.currentTarget) return;
