@@ -41,7 +41,7 @@ productsData.filter(({ category }) => {
 function renderCategories() {
     let categoriesHTML = "";
     allCategories.forEach(category => {
-        categoriesHTML += `<li><a href="#">${category}</a></li>`
+        categoriesHTML += `<li><a href="/category.html?title=${category}">${category}</a></li>`
     });
     categoryList.innerHTML = categoriesHTML;
 }
