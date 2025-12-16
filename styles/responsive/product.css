@@ -5,3 +5,11 @@
         flex-direction: column;
     }
 }
+
+@media (max-Width: 400px) {
+
+    .add-to-cart-btn,
+    .wishlist-btn {
+        padding: 0.7rem 0.4rem;
+    }
+}

@@ -164,6 +164,9 @@
 
 .btn-section {
     margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
 }
 
 .btn {
@@ -179,16 +182,12 @@
     transition: all 0.25s ease-in;
 }
 
-.btn-section .btn+.btn {
-    margin-left: 0.8rem;
-}
-
 .btn:hover {
     background-color: #fff;
     color: var(--brand-color);
 }
 
-/*------------ reviws section ------------*/
+/*------------ reviews section ------------*/
 
 .reviews-section {
     margin-top: 3.75rem;
