@@ -1,3 +1,5 @@
+import { productsData } from './../data/products.js';
+
 const moveToTopBtn = document.querySelector(".move-to-top");
 const categoryMenu = document.querySelector(".category-menu");
 const categoryList = document.querySelector(".category-list");
@@ -12,13 +14,35 @@ const overlay = document.querySelector(".overlay");
 const desktopSearchInp = document.querySelector(".desktop-search input");
 const responsiveSearchInp = document.querySelector(".responsive-search input");
 
+window.addEventListener("load", () => window.scrollTo(0, 0));
+
 window.addEventListener("scroll", function () {
-    if (document.documentElement.scrollTop >= 300) {
+    if (document.documentElement.scrollTop >= 500) {
         moveToTopBtn.classList.add("active");
+        document.body.classList.add("scroll-active");
     } else {
         moveToTopBtn.classList.remove("active");
+        document.body.classList.remove("scroll-active");
     }
 });
+
+
+const allCategories = [];
+productsData.filter(({ category }) => {
+    if (!allCategories.includes(category)) {
+        allCategories.push(category);
+    }
+});
+
+function renderCategories() {
+    let categoriesHTML = "";
+    allCategories.forEach(category => {
+        categoriesHTML += `<li><a href="#">${category}</a></li>`
+    });
+    categoryList.innerHTML = categoriesHTML;
+}
+
+renderCategories();
 
 desktopSearchInp.addEventListener("input", function (e) {
     responsiveSearchInp.value = e.target.value;
