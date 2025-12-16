@@ -1,0 +1,8 @@
+.category-products h1 {
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.cards-container {
+    column-gap: 4rem;
+}
