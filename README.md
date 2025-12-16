@@ -2,7 +2,7 @@
 
 Electro Mania is a **frontend eCommerce website** built using **HTML, CSS, and Vanilla JavaScript**.
 
-I ma creatign this project is for **learning purposes**, focusing on real-world eCommerce features and frontend logic.
+I am creating this project is for **learning purposes**, focusing on real-world eCommerce features and frontend logic.
 
 ## 🚀 Features
 
