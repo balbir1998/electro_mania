@@ -162,15 +162,16 @@ form .input-container {
     gap: 0.5rem;
 }
 
-.icons-container button {
+.icons-container>* {
     border: none;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     background-color: unset;
     cursor: pointer;
     transition: var(--color-transtion);
+    padding: 1px 6px;
 }
 
-.icons-container button:hover {
+.icons-container>*:hover {
     color: var(--brand-color);
 }
 
@@ -182,6 +183,10 @@ form .input-container {
     border-top: 1px solid;
     border-bottom: 1px solid;
     border-color: #EBEBEB;
+}
+
+body:has(.navbar.active) {
+    overflow: hidden;
 }
 
 .close-menus {
@@ -379,6 +384,85 @@ form .input-container {
 
 .card-btn:hover {
     color: #20C9AE;
+}
+
+/*-------------------- login/register section --------------------*/
+
+.auth-section {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.model {
+    background-color: #ffffff;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.model.register-model {
+    max-width: 600px;
+}
+
+.model h1 {
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-top: unset;
+    margin-bottom: 2rem;
+}
+
+.model form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-input-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    font-size: 1.125rem;
+}
+
+
+.form-input input {
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 10px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+form button {
+    align-self: start;
+    border: none;
+    background-color: var(--brand-color);
+    color: #fff;
+    padding: 0.625rem 1.75rem;
+    max-width: 200px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid var(--brand-color);
+    transition: all 0.25s ease-in;
+}
+
+form button:hover {
+    background-color: #fff;
+    color: var(--brand-color);
+}
+
+.switch-model a {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
 }
 
 /*------------------ footer section ------------------*/
