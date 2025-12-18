@@ -3,6 +3,10 @@
 
 @media (max-width: 1020px) {
 
+    body {
+        padding-top: 6rem;
+    }
+
     /*----------- navbar -----------*/
     .icons-container .hamburgur-menu {
         display: unset;
@@ -136,6 +140,9 @@
 }
 
 @media (max-width: 768px) {
+    body {
+        padding-top: 10rem;
+    }
 
     /*----------- navbar -----------*/
     .search-container.desktop-search {
@@ -166,6 +173,14 @@
 }
 
 @media (max-width: 500px) {
+
+    body {
+        padding-top: 6rem;
+    }
+
+    .top-header {
+        display: none;
+    }
 
     /*-------------- footer --------------*/
     .footer-items-container>* {
