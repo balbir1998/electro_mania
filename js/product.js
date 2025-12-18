@@ -11,6 +11,9 @@ const cardsContainer = document.querySelector(".cards-container");
 
 renderProducts(productsData.slice(0, 5), cardsContainer);
 
+const title = new URLSearchParams(location.search).get("title");
+document.querySelector("title").innerText = `${title[0].toUpperCase() + title.slice(1)} - Electro Mania`;
+
 selectImages.addEventListener("click", (e) => {
     if (e.target === e.currentTarget) return;
 
