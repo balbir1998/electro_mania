@@ -245,3 +245,20 @@ p:has(.ratings) {
     resize: both;
     width: 100%;
 }
+
+
+/*-------------------- responsive --------------------*/
+
+@media (max-width: 768px) {
+    .product-details-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-Width: 400px) {
+
+    .add-to-cart-btn,
+    .wishlist-btn {
+        padding: 0.7rem 0.4rem;
+    }
+}
