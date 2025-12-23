@@ -13,13 +13,24 @@ const closeMenusBtn = document.querySelector(".close-menus");
 const overlay = document.querySelector(".overlay");
 const desktopSearchInp = document.querySelector(".desktop-search input");
 const responsiveSearchInp = document.querySelector(".responsive-search input");
+export const cartBtn = document.querySelector(".cart-btn");
+
+export const cartData = JSON.parse(localStorage.getItem("cartData")) || {};
+
+if (Object.keys(cartData).length) {
+    document.documentElement.style.cssText = `--cart-itemsCount: "${Object.keys(cartData).length}"`;
+    cartBtn.classList.add("active-cart");
+}
 
 window.addEventListener("load", () => window.scrollTo(0, 0));
 
 window.addEventListener("scroll", function () {
-    if (document.documentElement.scrollTop >= 100) {
+    if (document.documentElement.scrollTop >= 120) {
         document.body.classList.add("scroll-active");
-    } else {
+    }
+
+    if (document.documentElement.scrollTop <= 80 &&
+        document.body.classList.contains("scroll-active")) {
         document.body.classList.remove("scroll-active");
     }
 
