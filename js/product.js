@@ -11,8 +11,8 @@ const cardsContainer = document.querySelector(".cards-container");
 
 renderProducts(productsData.slice(0, 5), cardsContainer);
 
-const title = new URLSearchParams(location.search).get("title");
-document.querySelector("title").innerText = `${title[0].toUpperCase() + title.slice(1)} - Electro Mania`;
+// const title = new URLSearchParams(location.search).get("title");
+// document.querySelector("title").innerText = `${title[0].toUpperCase() + title.slice(1)} - Electro Mania`;
 
 selectImages.addEventListener("click", (e) => {
     if (e.target === e.currentTarget) return;
@@ -60,7 +60,7 @@ quanityInp.addEventListener("blur", (e) => {
     if (parseInt(e.target.value) > 4) {
         quantityContainer.classList.add("active-before");
         setTimeout(() => {
-            e.target.value = 1;
+            e.target.value = 4;
             quantityContainer.classList.remove("active-before");
         }, 1500);
     }
