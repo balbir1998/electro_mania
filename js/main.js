@@ -16,6 +16,7 @@ const responsiveSearchInp = document.querySelector(".responsive-search input");
 export const cartBtn = document.querySelector(".cart-btn");
 
 export const cartData = JSON.parse(localStorage.getItem("cartData")) || {};
+export const wishlistData = JSON.parse(localStorage.getItem("wishlistData")) || [];
 
 if (Object.keys(cartData).length) {
     document.documentElement.style.cssText = `--cart-itemsCount: "${Object.keys(cartData).length}"`;
