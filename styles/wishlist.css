@@ -1,0 +1,156 @@
+.whishlist-section {
+    margin-top: 3rem;
+}
+
+.whishlist-section .heading {
+    text-align: center;
+    margin: unset;
+    margin-bottom: 2rem;
+}
+
+.wishlist-status {
+    display: none;
+    text-align: center;
+}
+
+.wishlist-status.empty {
+    display: block;
+}
+
+
+.wishlist-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #1C1D1E;
+    font-size: 15px;
+    font-weight: 500;
+    display: none;
+}
+
+.wishlist-table.active {
+    display: table;
+}
+
+th,
+td {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 8px 10px;
+}
+
+table img,
+.wishlist-card img {
+    width: 100%;
+    max-width: 60px;
+    object-fit: cover;
+}
+
+td:has(img) {
+    padding: unset;
+}
+
+.title {
+    font-weight: inherit;
+    text-transform: capitalize;
+}
+
+.product-price {
+    display: inline-block;
+    width: max-content;
+}
+
+.stock {
+    color: #00B200;
+    width: max-content;
+    display: inline-block;
+}
+
+.wishlist-btns {
+    background-color: #E9E6ED;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #515151;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.25s ease-in;
+    display: inline-block;
+    width: max-content;
+    text-align: center;
+    cursor: pointer;
+}
+
+.remove-btn {
+    color: #c80b0b;
+    cursor: pointer;
+}
+
+.wishlist-btns:hover {
+    background-color: #d7d4db;
+}
+
+/* mobile styles  */
+.mobile-wishlist-container {
+    display: none;
+    color: #1C1D1E;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.wishlist-card {
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+    background-color: #fff;
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    padding: 9px 12px;
+}
+
+.wishlist-card+.wishlist-card {
+    margin-top: 1rem;
+}
+
+.wishlist-card .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: start;
+    flex-grow: 1;
+}
+
+.card-content>* {
+    margin: unset;
+}
+
+
+.btns-container {
+    display: inline-flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btns-container .remove-btn {
+    border: unset;
+    background-color: #c80b0b;
+    color: #fff
+}
+
+@media (max-width: 500px) {
+    .wishlist-table.active {
+        display: none;
+    }
+
+    .wishlist-card img {
+        align-self: center;
+        max-width: 125px;
+    }
+
+    .mobile-wishlist-container {
+        display: unset;
+    }
+
+    .view-details {
+        width: unset;
+    }
+}
