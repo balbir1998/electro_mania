@@ -1,14 +1,14 @@
 import { productsData } from './../data/products.js';
 import { accessoriesData } from './../data/accessories.js';
-import { cartData } from './main.js';
-import { cartBtn } from './main.js';
+import { cartData, cartBtn } from './main.js';
+import updateLocalStorage from './utils/updateLocalStorage.js';
 
 const productList = document.querySelector(".product-list");
 const itemCount = document.querySelector(".item-count");
 const subTotal = document.querySelector(".subtotal p span");
 const total = document.querySelector(".total p span");
 const footer = document.querySelector("footer");
-const allItems = [...accessoriesData, ...productsData,]
+const allItems = [...accessoriesData, ...productsData];
 let length = productList.children.length;
 
 itemCount.innerText = `You have ${length} item${length > 1 ? "s" : ""} in your cart`;
@@ -56,7 +56,7 @@ productList.addEventListener("click", (e) => {
 
         calculateTotalPrice();
 
-        localStorage.setItem("cartData", JSON.stringify(cartData));
+        updateLocalStorage("cartData", cartData);
         parentElement.remove();
         document.documentElement.style.cssText = `--cart-itemsCount: "${Object.keys(cartData).length}";`
 
@@ -89,7 +89,7 @@ function addEvents(inputList) {
                 productQuantity > 0 && productQuantity <= 4) {
 
                 cartData[productId].quantity = productQuantity;
-                localStorage.setItem("cartData", JSON.stringify(cartData));
+                updateLocalStorage("cartData", cartData);
 
                 calculateTotalPrice();
             };
@@ -97,7 +97,7 @@ function addEvents(inputList) {
 
         input.addEventListener("change", (e) => {
             cartData[productId].quantity = parseInt(e.target.value);
-            localStorage.setItem("cartData", JSON.stringify(cartData));
+            updateLocalStorage("cartData", cartData);
 
             calculateTotalPrice();
         });
@@ -106,7 +106,7 @@ function addEvents(inputList) {
             if (!(e.target.value) || parseInt(e.target.value) < 1) {
                 e.target.value = 1;
                 cartData[productId].quantity = 1;
-                localStorage.setItem("cartData", JSON.stringify(cartData));
+                updateLocalStorage("cartData", cartData);
                 calculateTotalPrice();
                 return;
             }
@@ -114,7 +114,7 @@ function addEvents(inputList) {
             if (parseInt(e.target.value) > 4) {
                 input.parentElement.classList.add("active-before");
                 cartData[productId].quantity = 4;
-                localStorage.setItem("cartData", JSON.stringify(cartData));
+                updateLocalStorage("cartData", cartData);
                 calculateTotalPrice();
 
                 setTimeout(() => {
