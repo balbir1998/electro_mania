@@ -1,8 +1,8 @@
 import { productsData } from "../data/products.js";
 import { accessoriesData } from "../data/accessories.js";
 import renderProducts from './utils/renderProducts.js';
-import { cartData } from "./main.js";
-import { cartBtn } from "./main.js";
+import { cartBtn, cartData, wishlistData } from "./main.js";
+import updateLocalStorage from './utils/updateLocalStorage.js';
 
 const cardsContainer = document.querySelector(".cards-container");
 const accessoriesCardsContainer = document.querySelector(".accessories-cards-container");
@@ -24,14 +24,25 @@ function handleCardsItems(e) {
         } else {
             cartData[productId] = { quantity: 1 };
         };
-        localStorage.setItem("cartData", JSON.stringify(cartData));
+        updateLocalStorage("cartData", cartData);
         alert("Product added to cart");
         cartBtn.classList.add("active-cart");
         document.documentElement.style.cssText = `--cart-itemsCount: "${Object.keys(cartData).length}";`
         return;
     }
 
-    if (e.target.classList.contains("wishlist")) return;
+    if (e.target.classList.contains("wishlist")) {
+        if (wishlistData.includes(productId)) {
+            alert("Items is already wishlisted");
+            return;
+        }
+
+        wishlistData.push(productId);
+        updateLocalStorage("wishlistData", wishlistData);
+        alert("Item added to wishlist");
+        return;
+    };
+
     if (e.target.classList.contains("card-bottom")) return;
 
     location.href = `./product.html?id=${productId}`;
