@@ -1,5 +1,4 @@
 import { productsData } from './../data/products.js';
-import { accessoriesData } from './../data/accessories.js';
 import { cartData, cartBtn } from './main.js';
 import updateLocalStorage from './utils/updateLocalStorage.js';
 
@@ -8,7 +7,6 @@ const itemCount = document.querySelector(".item-count");
 const subTotal = document.querySelector(".subtotal p span");
 const total = document.querySelector(".total p span");
 const footer = document.querySelector("footer");
-const allItems = [...accessoriesData, ...productsData];
 let length = productList.children.length;
 
 itemCount.innerText = `You have ${length} item${length > 1 ? "s" : ""} in your cart`;
@@ -19,7 +17,7 @@ if (Object.keys(cartData).length) {
     let cartTotalPrice = 0;
 
     Object.entries(cartData).forEach((cartItem, idx) => {
-        allItems.find(product => {
+        productsData.find(product => {
             if (cartItem[0] === product.id) {
                 cardsHtml += renderCartItems(product, cartItem, idx + 1);
                 //calculate totalPrice of each product based on quantity
@@ -129,7 +127,7 @@ function addEvents(inputList) {
 function calculateTotalPrice() {
     let totalPrice = 0;
     Object.entries(cartData).forEach(cartItem => {
-        allItems.find(product => {
+        productsData.find(product => {
             if (cartItem[0] === product.id) totalPrice += product.price * cartItem[1].quantity;
         });
     });
@@ -141,11 +139,13 @@ function calculateTotalPrice() {
 function renderCartItems(product, cartItem, idx) {
     return `
         <div class="cart-product" data-product-id=${product.id}>
-         <img src=${product.src} alt="image">
+        <a href="./product.html?id=${product.id}">
+            <img src=${product.images[0]} alt="image">
+        </a>
          <div class="product-info">
              <div class="product-text">
                  <h1>${product.title}</h1>
-                 <p class="price">&#8377; ${product.price}</p>
+                 <p class="price">&#8377; ${product.price.toLocaleString("en-IN")}</p>
                  <div class="quantity">
                      <label for="quantity-${idx}">Quantity:</label>
                      <input type="number" id="quantity-${idx}" value=${cartItem[1].quantity} min="1" max="4">
