@@ -42,11 +42,14 @@ table img,
 .wishlist-card img {
     width: 100%;
     max-width: 60px;
-    object-fit: cover;
+    height: 60px;
+    object-fit: contain;
+    vertical-align: middle;
 }
 
 td:has(img) {
     padding: unset;
+    padding-block: 2px
 }
 
 .title {
@@ -144,6 +147,7 @@ td:has(img) {
     .wishlist-card img {
         align-self: center;
         max-width: 125px;
+        height: 100px;
     }
 
     .mobile-wishlist-container {
