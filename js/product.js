@@ -3,6 +3,7 @@ import { productsData } from './../data/products.js';
 import { cartData, wishlistData } from "../js/main.js"
 import { desktopSearchInp, responsiveSearchInp } from '../js/main.js';
 import updateLocalStorage from './utils/updateLocalStorage.js';
+import { handleCardsItems } from './utils/handleCards.js';
 const productImagesParent = document.querySelectorAll(".product-image-conatiner .product-img");
 const selectImages = document.querySelector(".images-list");
 const quantityContainer = document.querySelector(".quantity-section");
@@ -19,8 +20,6 @@ const productCategory = document.querySelector(".category");
 const productSpecs = document.querySelector(".specs");
 const productStock = document.querySelector(".availability");
 const productsPrice = document.querySelector(".product-price");
-
-renderProducts(productsData.slice(0, 5), cardsContainer);
 
 const searchParams = new URLSearchParams(location.search);
 const productId = searchParams.get("id");
@@ -52,6 +51,15 @@ if (productId) {
     productStock.innerText = stock ? "(In Stock)" : "(Out of Stock)";
 
     document.querySelector("title").innerText = `${title[0].toUpperCase() + title.slice(1)} - Electro Mania`;
+
+    const relatedproducts = productsData.filter(item => {
+        if (item.category === product.category && item.id !== product.id) return item;
+    });
+
+    if (relatedproducts.length) {
+        renderProducts(relatedproducts, cardsContainer);
+        cardsContainer.addEventListener("click", handleCardsItems);
+    }
 }
 
 selectImages.addEventListener("click", (e) => {
