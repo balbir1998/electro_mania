@@ -1,4 +1,5 @@
 import { productsData } from './../data/products.js';
+import { handleCardsItems } from './utils/handleCards.js';
 import renderProducts from './utils/renderProducts.js';
 const cardsContainer = document.querySelector(".cards-container");
 const categoryTitle = document.querySelector(".category-title");
@@ -10,3 +11,5 @@ document.querySelector("title").innerText = `${category[0].toUpperCase() + categ
 
 const filterProducts = productsData.filter(product => category.toLowerCase() === product.category.toLowerCase());
 renderProducts(filterProducts, cardsContainer);
+
+cardsContainer.addEventListener("click", handleCardsItems);
