@@ -1,6 +1,5 @@
-import { wishlistData } from './main.js';
 import { productsData } from '../data/products.js';
-import { accessoriesData } from './../data/accessories.js';
+import { wishlistData } from './main.js';
 import updateLocalStorage from './utils/updateLocalStorage.js';
 
 const wishlistStatus = document.querySelector(".wishlist-status");
@@ -9,14 +8,13 @@ const cardsParent = document.querySelector(".mobile-wishlist-container");
 const tableBody = document.querySelector(".table-body");
 const main = document.querySelector("main");
 
-const allItems = [...productsData, ...accessoriesData];
 
 if (wishlistData.length) {
     let tableHtml = "";
     let cardHtml = "";
 
     wishlistData.forEach(productId => {
-        allItems.find(item => {
+        productsData.find(item => {
             if (item.id === productId) {
                 tableHtml += renderTableData(item);
                 cardHtml += renderCardData(item);
@@ -76,9 +74,9 @@ cardsParent.addEventListener("click", (e) => {
     }
 });
 
-function renderTableData({ id, src, stock, title, price }) {
+function renderTableData({ id, images, stock, title, price }) {
     return `<tr class="row" data-product-id=${id}>
-                <td><img src=${src} alt="image"></td>
+                <td><img src=${images[0]} alt="image"></td>
                 <td class="title">${title}</td>
                 <td><span class="product-price">&#8377; ${price.toLocaleString("en-IN")}</span></td>
                 <td><span class="stock">${stock ? "In Stock" : "Out of stock"}</span></td>
@@ -87,9 +85,9 @@ function renderTableData({ id, src, stock, title, price }) {
             </tr>`;
 }
 
-function renderCardData({ id, src, stock, title, price }) {
+function renderCardData({ id, images, stock, title, price }) {
     return `<div class="wishlist-card" data-product-id=${id}>
-                <img src=${src} alt="image">
+                <img src=${images[0]} alt="image">
                 <div class="card-content">
                     <h3 class="title">${title}</h3>
                     <p><span class="product-price">&#8377; ${price.toLocaleString("en-IN")}</span></p>
