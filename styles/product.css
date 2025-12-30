@@ -33,23 +33,27 @@
 
 .product-image-conatiner .product-img img {
     width: 100%;
-    max-width: 450px;
+    max-width: 400px;
+    max-height: 400px;
+    object-fit: contain;
 }
 
 .images-list {
+    margin-top: 2rem;
     display: flex;
-    gap: 0.5rem;
-    justify-content: space-between;
-    padding: 10px;
+    gap: 0.25rem;
+    justify-content: center;
     width: 100%;
-
 }
 
 .images-list img {
     border: 1px solid rgba(203, 202, 202, 0.8);
     width: 25%;
-    max-width: 120px;
+    max-width: 80px;
+    max-height: 80px;
+    object-fit: contain;
     cursor: pointer;
+    padding: 0.25rem;
 }
 
 .images-list img.active {
@@ -71,6 +75,7 @@
     color: #1c1d1e;
     margin: unset;
     padding-bottom: 30px;
+    text-transform: capitalize;
 }
 
 .prodcut-details-text .description {
@@ -78,6 +83,10 @@
     line-height: 2rem;
     font-weight: 400;
     margin: unset
+}
+
+.prodcut-details-text .category {
+    text-transform: capitalize
 }
 
 .prodcut-details-text .category,
@@ -95,6 +104,7 @@
 
 .details-group ul li {
     font-size: 1.125rem;
+    text-transform: capitalize;
 }
 
 .details-group ul li+li {
