@@ -11,8 +11,9 @@ const responsiveCatList = document.querySelector(".responsive-cat-list");
 const responsiveMenusList = document.querySelector(".responsive-menus-list");
 const closeMenusBtn = document.querySelector(".close-menus");
 const overlay = document.querySelector(".overlay");
-const desktopSearchInp = document.querySelector(".desktop-search input");
-const responsiveSearchInp = document.querySelector(".responsive-search input");
+export const desktopSearchInp = document.querySelector(".desktop-search input");
+export const responsiveSearchInp = document.querySelector(".responsive-search input");
+const searchQuries = document.querySelectorAll(".search-queries");
 export const cartBtn = document.querySelector(".cart-btn");
 
 export const cartData = JSON.parse(localStorage.getItem("cartData")) || {};
@@ -62,10 +63,23 @@ renderCategories();
 
 desktopSearchInp.addEventListener("input", function (e) {
     responsiveSearchInp.value = e.target.value;
+    handleSearchInput(e.target.value);
 });
 
 responsiveSearchInp.addEventListener("input", function (e) {
     desktopSearchInp.value = e.target.value;
+    handleSearchInput(e.target.value);
+});
+
+desktopSearchInp.addEventListener("focus", (e) => handleSearchInput(e.target.value));
+responsiveSearchInp.addEventListener("focus", (e) => handleSearchInput(e.target.value));
+
+searchQuries.forEach(queryContainer => {
+    queryContainer.addEventListener("mousedown", (e) => {
+        if (e.target === e.currentTarget) return;
+        const productId = e.target.dataset.searchId;
+        location.href = `./product.html?id=${productId}&search=true`;
+    });
 });
 
 hamburgurMenu.addEventListener("click", function () {
@@ -95,3 +109,21 @@ overlay.addEventListener("click", function () {
     navbar.classList.remove("active");
     overlay.classList.remove("active");
 });
+
+function handleSearchInput(query) {
+    if (!query) {
+        searchQuries.forEach(queryContainer => queryContainer.innerHTML = "");
+        return;
+    }
+
+    let queriesHtml = "";
+
+    productsData.filter(product => product.title.toLowerCase().includes(query.toLowerCase()))
+        .forEach(product => {
+            queriesHtml += `<p data-search-id="${product.id}">
+                                <i class="fa-solid fa-magnifying-glass"></i> ${product.title}
+                            </p>`;
+        });
+
+    searchQuries.forEach(queryContainer => queryContainer.innerHTML = queriesHtml);
+}
