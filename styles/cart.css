@@ -47,10 +47,17 @@
     margin-top: 1rem;
 }
 
-.cart-product img {
-    max-width: 200px;
+.cart-product a {
     width: 40%;
-    object-fit: cover;
+    max-width: 200px;
+    display: inline-flex;
+}
+
+.cart-product img {
+    width: 100%;
+    max-width: 150px;
+    margin-block: auto;
+    object-fit: contain;
 }
 
 .product-info {
