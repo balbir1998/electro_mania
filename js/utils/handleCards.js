@@ -1,4 +1,4 @@
-import { cartBtn, cartData, wishlistData } from "../main.js";
+import { getCartBtn, cartData, wishlistData } from "../main.js";
 import updateLocalStorage from "./updateLocalStorage.js";
 
 export function handleCardsItems(e) {
@@ -17,7 +17,7 @@ export function handleCardsItems(e) {
         };
         updateLocalStorage("cartData", cartData);
         alert("Product added to cart");
-        cartBtn.classList.add("active-cart");
+        window.onload = getCartBtn().classList.add("active-cart");
         document.documentElement.style.cssText = `--cart-itemsCount: "${Object.keys(cartData).length}";`
         return;
     }
