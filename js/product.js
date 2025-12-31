@@ -1,9 +1,14 @@
-import renderProducts from './utils/renderProducts.js';
 import { productsData } from './../data/products.js';
-import { cartData, wishlistData } from "../js/main.js"
-import { desktopSearchInp, responsiveSearchInp } from '../js/main.js';
-import updateLocalStorage from './utils/updateLocalStorage.js';
 import { handleCardsItems } from './utils/handleCards.js';
+import updateLocalStorage from './utils/updateLocalStorage.js';
+import renderProducts from './utils/renderProducts.js';
+import {
+    cartData,
+    wishlistData,
+    getResponsiveSearchInp,
+    getDesktopSearchInp
+} from '../js/main.js';
+
 const productImagesParent = document.querySelectorAll(".product-image-conatiner .product-img");
 const selectImages = document.querySelector(".images-list");
 const quantityContainer = document.querySelector(".quantity-section");
@@ -31,8 +36,10 @@ if (productId) {
     const { images, title, description, category, specifications, price, stock } = product;
 
     if (isSearch) {
-        desktopSearchInp.value = product.title;
-        responsiveSearchInp.value = product.title;
+        window.addEventListener("load", () => {
+            getDesktopSearchInp().value = product.title;
+            getResponsiveSearchInp().value = product.title;
+        });
     }
 
     productImagesParent.forEach((parent, idx) => parent.children[0].src = images[idx]);
