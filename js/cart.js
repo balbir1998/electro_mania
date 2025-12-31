@@ -1,16 +1,16 @@
 import { productsData } from './../data/products.js';
-import { cartData, cartBtn } from './main.js';
+import { cartData, getCartBtn } from './main.js';
 import updateLocalStorage from './utils/updateLocalStorage.js';
 
 const productList = document.querySelector(".product-list");
 const itemCount = document.querySelector(".item-count");
 const subTotal = document.querySelector(".subtotal p span");
 const total = document.querySelector(".total p span");
-const footer = document.querySelector("footer");
+const main = document.querySelector("main");
 let length = productList.children.length;
 
 itemCount.innerText = `You have ${length} item${length > 1 ? "s" : ""} in your cart`;
-footer.style.marginTop = "200px";
+main.style.marginBottom = "200px";
 
 if (Object.keys(cartData).length) {
     let cardsHtml = "";
@@ -34,7 +34,7 @@ if (Object.keys(cartData).length) {
 
     length = productList.children.length;
     itemCount.innerText = `You have ${length} item${length > 1 ? "s" : ""} in your cart`;
-    footer.style.marginTop = "2rem";
+    main.style.marginBottom = "2rem";
 
     addEvents(document.querySelectorAll("input[type='number']"));
 }
@@ -63,8 +63,8 @@ productList.addEventListener("click", (e) => {
 
         if (length === 0) {
             productList.parentElement.classList.remove("active");
-            footer.style.marginTop = "200px";
-            cartBtn.classList.remove("active-cart");
+            main.style.marginBottom = "200px";
+            window.onload = getCartBtn().classList.remove("active-cart");
         }
     };
 });
