@@ -31,6 +31,18 @@ body {
     letter-spacing: 0.5px;
 }
 
+#app {
+    display: none;
+}
+
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
 .overlay {
     display: none;
     background-color: rgba(0, 0, 0, 0.2);
