@@ -20,106 +20,108 @@
 </head>
 
 <body>
-    <!-- header section -->
-    <header></header>
+    <div id="app">
+        <!-- header section -->
+        <header></header>
 
-    <!-- main section -->
-    <main>
-        <!-- product details -->
-        <section class="product-details-section">
-            <div class="container">
-                <div class="product-details-content">
-                    <div class="product-image-section">
-                        <div class="product-image-conatiner">
-                            <div class="product-img">
-                                <img src="" alt="product-image">
+        <!-- main section -->
+        <main>
+            <!-- product details -->
+            <section class="product-details-section">
+                <div class="container">
+                    <div class="product-details-content">
+                        <div class="product-image-section">
+                            <div class="product-image-conatiner">
+                                <div class="product-img">
+                                    <img src="" alt="product-image">
+                                </div>
+
+                                <div class="product-img">
+                                    <img src="" alt="product-image">
+                                </div>
+
+                                <div class="product-img">
+                                    <img src="" alt="product-image">
+                                </div>
+
+                                <div class="product-img">
+                                    <img src="" alt="product-image">
+                                </div>
                             </div>
-
-                            <div class="product-img">
+                            <div class="images-list">
+                                <img src="" class="active" alt="product-image">
                                 <img src="" alt="product-image">
-                            </div>
-
-                            <div class="product-img">
                                 <img src="" alt="product-image">
-                            </div>
-
-                            <div class="product-img">
                                 <img src="" alt="product-image">
                             </div>
                         </div>
-                        <div class="images-list">
-                            <img src="" class="active" alt="product-image">
-                            <img src="" alt="product-image">
-                            <img src="" alt="product-image">
-                            <img src="" alt="product-image">
+                        <div class="prodcut-details-text">
+                            <h1 class="product-title"></h1>
+                            <p class="description"></p>
+                            <p class="category">
+                                </h3>
+                            <div class="details-group">
+                                <h3>Specifications</h3>
+                                <ul class="specs"></ul>
+                            </div>
+                            <span class="product-price"></span>
+                            <p class="availability"></p>
+                            <div class="quantity-section">
+                                <button class="decreament">
+                                    <span>-</span>
+                                </button>
+                                <input type="text" class="quantity" value="1" />
+                                <button class="increament">
+                                    <span>+</span>
+                                </button>
+                            </div>
+                            <div class="btn-section">
+                                <button class="btn add-to-cart-btn">Add to cart</button>
+                                <button class="btn wishlist-btn"><i class="fa-regular fa-heart"></i> Add to
+                                    wishlist</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="prodcut-details-text">
-                        <h1 class="product-title"></h1>
-                        <p class="description"></p>
-                        <p class="category">
-                            </h3>
-                        <div class="details-group">
-                            <h3>Specifications</h3>
-                            <ul class="specs"></ul>
-                        </div>
-                        <span class="product-price"></span>
-                        <p class="availability"></p>
-                        <div class="quantity-section">
-                            <button class="decreament">
-                                <span>-</span>
-                            </button>
-                            <input type="text" class="quantity" value="1" />
-                            <button class="increament">
-                                <span>+</span>
-                            </button>
-                        </div>
-                        <div class="btn-section">
-                            <button class="btn add-to-cart-btn">Add to cart</button>
-                            <button class="btn wishlist-btn"><i class="fa-regular fa-heart"></i> Add to
-                                wishlist</button>
-                        </div>
+                </div>
+            </section>
+
+            <!-- reviews section -->
+            <section class="reviews-section">
+                <div class="container">
+                    <div class="reviews-container">
+                        <h2>Reviews (0)</h2>
+                        <p class="no-review">There are no reviews yet.</p>
+                        <p>Be the first to reviewer.</p>
+                        <p>Your email address will not be published.</p>
+                        <p>Your Rating *
+                            <span class="ratings">
+                                <i class="fa-regular fa-star" id="1"></i>
+                                <i class="fa-regular fa-star" id="2"></i>
+                                <i class="fa-regular fa-star" id="3"></i>
+                                <i class="fa-regular fa-star" id="4"></i>
+                                <i class="fa-regular fa-star" id="5"></i>
+                            </span>
+                        </p>
+                        <p>Your review *</p>
+                        <textarea rows="10" cols="100"></textarea>
+                        <button class="btn submit-btn">Submit</button>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- reviews section -->
-        <section class="reviews-section">
-            <div class="container">
-                <div class="reviews-container">
-                    <h2>Reviews (0)</h2>
-                    <p class="no-review">There are no reviews yet.</p>
-                    <p>Be the first to reviewer.</p>
-                    <p>Your email address will not be published.</p>
-                    <p>Your Rating *
-                        <span class="ratings">
-                            <i class="fa-regular fa-star" id="1"></i>
-                            <i class="fa-regular fa-star" id="2"></i>
-                            <i class="fa-regular fa-star" id="3"></i>
-                            <i class="fa-regular fa-star" id="4"></i>
-                            <i class="fa-regular fa-star" id="5"></i>
-                        </span>
-                    </p>
-                    <p>Your review *</p>
-                    <textarea rows="10" cols="100"></textarea>
-                    <button class="btn submit-btn">Submit</button>
+            <!-- related product -->
+            <section class="explore-products related-products">
+                <div class="container">
+                    <h1>Related Products</h1>
+                    <div class="cards-container">
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
 
-        <!-- related product -->
-        <section class="explore-products related-products">
-            <div class="container">
-                <h1>Related Products</h1>
-                <div class="cards-container">
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-------------- footer section -------------->
-    <footer></footer>
+        <!-------------- footer section -------------->
+        <footer></footer>
+    </div>
 </body>
 
 </html>
