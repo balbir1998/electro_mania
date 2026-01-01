@@ -19,6 +19,20 @@ window.addEventListener("load", () => window.scrollTo(0, 0));
 header.classList.add("navbar-container");
 footer.classList.add("footer-section");
 
+document.getElementById("app").style.display = "none";
+
+const loadingGif = document.createElement("img");
+loadingGif.classList.add("loader");
+loadingGif.src = "../assets/loading.gif";
+document.body.insertAdjacentElement("afterbegin", loadingGif);
+
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        loadingGif.remove();
+        document.getElementById("app").style.display = "block";
+    }, 300);
+});
+
 (async () => {
     const [headerHtml, footerHtml] = await Promise.all([
         loadHtml("./header.html"),
