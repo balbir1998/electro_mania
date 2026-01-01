@@ -20,53 +20,55 @@
 </head>
 
 <body>
-    <!-- header section -->
-    <header></header>
+    <div id="app">
+        <!-- header section -->
+        <header></header>
 
-    <main>
-        <!-- register section -->
-        <section class="auth-section">
-            <div class="container">
-                <section class="model register-model">
-                    <h1>Register</h1>
-                    <form>
-                        <div class="form-input-container">
-                            <div class="form-input">
-                                <label for="first-name">First Name</label>
-                                <input type="text" id="first-name" name="firstName" />
+        <main>
+            <!-- register section -->
+            <section class="auth-section">
+                <div class="container">
+                    <section class="model register-model">
+                        <h1>Register</h1>
+                        <form>
+                            <div class="form-input-container">
+                                <div class="form-input">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" id="first-name" name="firstName" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" id="last-name" name="lastName" />
+                                </div>
                             </div>
-                            <div class="form-input">
-                                <label for="last-name">Last Name</label>
-                                <input type="text" id="last-name" name="lastName" />
+                            <div class="form-input-container">
+                                <div class="form-input">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="phone">Contact Number</label>
+                                    <input type="tel" id="phone" name="phoneNo" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-input-container">
-                            <div class="form-input">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" />
+                            <div class="form-input-container">
+                                <div class="form-input">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" name="password" />
+                                </div>
                             </div>
-                            <div class="form-input">
-                                <label for="phone">Contact Number</label>
-                                <input type="tel" id="phone" name="phoneNo" />
-                            </div>
-                        </div>
-                        <div class="form-input-container">
-                            <div class="form-input">
-                                <label for="password">Password</label>
-                                <input type="password" id="password" name="password" />
-                            </div>
-                        </div>
-                        <button type="submit">Register</button>
-                    </form>
-                    <p class="switch-model login">Already have an account! <a href="/login.html">Login</a></p>
-                </section>
-            </div>
-        </section>
+                            <button type="submit">Register</button>
+                        </form>
+                        <p class="switch-model login">Already have an account! <a href="/login.html">Login</a></p>
+                    </section>
+                </div>
+            </section>
 
-    </main>
+        </main>
 
-    <!-------------- footer section -------------->
-    <footer></footer>
+        <!-------------- footer section -------------->
+        <footer></footer>
+    </div>
 </body>
 
 </html>
