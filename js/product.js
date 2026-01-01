@@ -6,7 +6,8 @@ import {
     cartData,
     wishlistData,
     getResponsiveSearchInp,
-    getDesktopSearchInp
+    getDesktopSearchInp,
+    getCartBtn
 } from '../js/main.js';
 
 const productImagesParent = document.querySelectorAll(".product-image-conatiner .product-img");
@@ -144,6 +145,8 @@ addToCartBtn.addEventListener("click", () => {
     }
     updateLocalStorage("cartData", cartData);
     alert("Product is added in cart!");
+    document.documentElement.style.cssText = `--cart-itemsCount: "${Object.keys(cartData).length}";`
+    window.onload = getCartBtn().classList.add("active-cart");
 });
 
 wishlistBtn.addEventListener("click", () => {
