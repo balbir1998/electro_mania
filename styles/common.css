@@ -376,6 +376,10 @@ body:has(.navbar.active) {
 
 /* ------------Explore Products------------ */
 
+#shop {
+    scroll-margin: 200px;
+}
+
 .explore-products {
     margin-top: 5rem;
 }
