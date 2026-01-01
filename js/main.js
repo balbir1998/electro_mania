@@ -14,8 +14,6 @@ export const getDesktopSearchInp = () => desktopSearchInp;
 export const getResponsiveSearchInp = () => responsiveSearchInp;
 export const getCartBtn = () => cartBtn;
 
-window.addEventListener("load", () => window.scrollTo(0, 0));
-
 header.classList.add("navbar-container");
 footer.classList.add("footer-section");
 
@@ -27,6 +25,8 @@ loadingGif.src = "../assets/loading.gif";
 document.body.insertAdjacentElement("afterbegin", loadingGif);
 
 document.addEventListener("DOMContentLoaded", () => {
+    window.scrollTo(0, 0);
+
     setTimeout(() => {
         loadingGif.remove();
         document.getElementById("app").style.display = "block";
