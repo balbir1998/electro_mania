@@ -7,6 +7,8 @@ export const wishlistData = JSON.parse(localStorage.getItem("wishlistData")) || 
 let desktopSearchInp;
 let responsiveSearchInp;
 let cartBtn;
+const header = document.querySelector("header");
+const footer = document.querySelector("footer");
 
 export const getDesktopSearchInp = () => desktopSearchInp;
 export const getResponsiveSearchInp = () => responsiveSearchInp;
@@ -14,14 +16,17 @@ export const getCartBtn = () => cartBtn;
 
 window.addEventListener("load", () => window.scrollTo(0, 0));
 
+header.classList.add("navbar-container");
+footer.classList.add("footer-section");
+
 (async () => {
-    const [header, footer] = await Promise.all([
+    const [headerHtml, footerHtml] = await Promise.all([
         loadHtml("./header.html"),
         loadHtml("./footer.html")
     ]);
 
-    document.querySelector("header").innerHTML = header;
-    document.querySelector("footer").innerHTML = footer;
+    header.innerHTML = headerHtml;
+    footer.innerHTML = footerHtml;
 
     desktopSearchInp = document.querySelector(".desktop-search input");
     responsiveSearchInp = document.querySelector(".responsive-search input");
