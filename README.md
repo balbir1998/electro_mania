@@ -31,10 +31,11 @@ It focuses on core frontend concepts like **DOM manipulation**, **state manageme
 ---
 
 ## 📂 Project Structure
-📁 /data — product data  
-📁 /utils — helper functions  
-📁 /components — UI rendering logic  
-📁 /assets — images and static files  
+📁 /data — product data files  
+📁 /js — main JavaScript logic and functionality  
+📁 /styles — CSS files for styling  
+📁 /assets — images and static resources  
+📄 index.html — main HTML file 
 
 ---
 
