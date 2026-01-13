@@ -166,12 +166,13 @@ ratings.addEventListener("mouseover", (e) => {
     updateStarRating(ratings, e.target.id);
 });
 
+let starRatingCount = 0;
 
 // onclick update the startRatingCount value
 ratings.addEventListener("click", (e) => {
     if (e.target === e.currentTarget) return;
 
-    if (parseInt(starRatingCount) === 1 && parseInt(e.target.id) === 1) {
+    if (starRatingCount === 1 && parseInt(e.target.id) === 1) {
         starRatingCount = 0;
         [...ratings.children].forEach(el => el.className = "fa-regular fa-star");
         return;
